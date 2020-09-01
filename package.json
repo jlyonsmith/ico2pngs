@@ -1,0 +1,60 @@
+{
+  "name": "some-tool",
+  "version": "1.0.0",
+  "engines": {
+    "node": ">=10.0"
+  },
+  "os": [
+    "darwin",
+    "linux"
+  ],
+  "description": "Node.js command line tool",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "babel src -d dist --source-maps --ignore **/*.test.js",
+    "debug:some-tool": "babel-node --inspect-brk src/some-tool.js",
+    "test": "jest --coverage",
+    "test:debug": "babel-node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand",
+    "deploy": "npm publish --access public"
+  },
+  "jest": {
+    "automock": false,
+    "testPathIgnorePatterns": [
+      "node_modules/",
+      "scratch/",
+      "dist/"
+    ]
+  },
+  "bin": {
+    "some-tool": "dist/some-tool.js"
+  },
+  "files": [
+    "dist/**"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/some-user/some-tool.git"
+  },
+  "keywords": [],
+  "author": "Some User",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/some-user/some-tool/issues"
+  },
+  "homepage": "https://github.com/some-user/some-tool#readme",
+  "dependencies": {
+    "chalk": "^4.0.0",
+    "minimist": "^1.2.5"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.6",
+    "@babel/node": "^7.8.7",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-proposal-decorators": "^7.8.3",
+    "@babel/plugin-proposal-optional-chaining": "^7.9.0",
+    "@babel/plugin-syntax-object-rest-spread": "^7.8.3",
+    "@babel/preset-env": "^7.9.6",
+    "jest-cli": "^26.0.1"
+  }
+}
