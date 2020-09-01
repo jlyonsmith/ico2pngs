@@ -1,7 +1,7 @@
 import parseArgs from "minimist"
 import { fullVersion } from "./version"
 
-export class SomeTool {
+export class GetFaviconTool {
   constructor(container) {
     this.toolName = container.toolName
     this.log = container.log

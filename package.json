@@ -1,5 +1,5 @@
 {
-  "name": "some-tool",
+  "name": "get-favicon-tool",
   "version": "1.0.0",
   "engines": {
     "node": ">=10.0"
@@ -12,7 +12,7 @@
   "scripts": {
     "clean": "rm -rf dist",
     "build": "babel src -d dist --source-maps --ignore **/*.test.js",
-    "debug:some-tool": "babel-node --inspect-brk src/some-tool.js",
+    "debug:get-favicon-tool": "babel-node --inspect-brk src/get-favicon-tool.js",
     "test": "jest --coverage",
     "test:debug": "babel-node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand",
     "deploy": "npm publish --access public"
@@ -26,22 +26,22 @@
     ]
   },
   "bin": {
-    "some-tool": "dist/some-tool.js"
+    "get-favicon-tool": "dist/get-favicon-tool.js"
   },
   "files": [
     "dist/**"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/some-user/some-tool.git"
+    "url": "git+https://github.com/jlyonsmith/get-favicon-tool.git"
   },
   "keywords": [],
   "author": "Some User",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/some-user/some-tool/issues"
+    "url": "https://github.com/jlyonsmith/get-favicon-tool/issues"
   },
-  "homepage": "https://github.com/some-user/some-tool#readme",
+  "homepage": "https://github.com/jlyonsmith/get-favicon-tool#readme",
   "dependencies": {
     "chalk": "^4.0.0",
     "minimist": "^1.2.5"

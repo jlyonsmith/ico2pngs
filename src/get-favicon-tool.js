@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { SomeTool } from "./SomeTool"
+import { GetFaviconTool } from "./GetFaviconTool"
 import chalk from "chalk"
 import path from "path"
 
@@ -13,7 +13,7 @@ const log = {
   },
 }
 
-const tool = new SomeTool({
+const tool = new GetFaviconTool({
   toolName: path.basename(process.argv[1], ".js"),
   log,
 })
