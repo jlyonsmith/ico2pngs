@@ -1,5 +1,6 @@
 import parseArgs from "minimist"
 import { fullVersion } from "./version"
+import Xray from "x-ray"
 
 export class GetFaviconTool {
   constructor(container) {
@@ -36,7 +37,48 @@ options:
       return 0
     }
 
-    // TODO: Add your code here...
+    const x = Xray()
+    const selectors = [
+      "link[rel=apple-touch-icon-precomposed][href]",
+      "link[rel=apple-touch-icon][href]",
+      'link[rel="shortcut icon"][href]',
+      "link[rel=icon][href]",
+      "meta[name=msapplication-TileImage][content]",
+      "meta[name=twitter\\:image][content]",
+      "meta[property=og\\:image][content]",
+    ]
+    const fetchFavicons = async (url) =>
+      new Promise(function (resolve, reject) {
+        x(url, selectors.join(), [
+          {
+            href: "@href",
+            content: "@content",
+            property: "@property",
+            rel: "@rel",
+            name: "@name",
+            sizes: "@sizes",
+          },
+        ])((err, favicons) => {
+          if (err) {
+            return reject(err)
+          }
+
+          favicons = favicons.map((favicon) => ({
+            href: favicon.href || favicon.content,
+            name: favicon.name || favicon.rel || favicon.property,
+            size:
+              Math.min.apply(null, (favicon.sizes || "").split(/[^0-9\.]+/g)) ||
+              undefined,
+          }))
+
+          return resolve(favicons)
+        })
+      })
+
+    const url = args._[0]
+    const favicons = await fetchFavicons(url)
+
+    this.log.info(JSON.stringify(favicons, null, "  "))
 
     return 0
   }

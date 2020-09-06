@@ -44,7 +44,8 @@
   "homepage": "https://github.com/jlyonsmith/get-favicon-tool#readme",
   "dependencies": {
     "chalk": "^4.0.0",
-    "minimist": "^1.2.5"
+    "minimist": "^1.2.5",
+    "x-ray": "^2.3.4"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
