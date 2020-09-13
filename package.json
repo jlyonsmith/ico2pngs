@@ -1,7 +1,7 @@
 {
   "name": "@johnls/ico2pngs",
   "version": "1.0.0",
-  "description": "Extract bitmaps from an ICO file as PNGs",
+  "description": "Extract bitmaps from an ICO file as separate PNGs with metadata",
   "scripts": {
     "clean": "rm -rf dist",
     "build": "babel src -d dist --source-maps --ignore **/*.test.js",
