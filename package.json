@@ -1,18 +1,10 @@
 {
-  "name": "get-favicon-tool",
+  "name": "@johnls/ico2pngs",
   "version": "1.0.0",
-  "engines": {
-    "node": ">=10.0"
-  },
-  "os": [
-    "darwin",
-    "linux"
-  ],
-  "description": "Node.js command line tool",
+  "description": "Extract bitmaps from an ICO file as PNGs",
   "scripts": {
     "clean": "rm -rf dist",
     "build": "babel src -d dist --source-maps --ignore **/*.test.js",
-    "debug:get-favicon-tool": "babel-node --inspect-brk src/get-favicon-tool.js",
     "test": "jest --coverage",
     "test:debug": "babel-node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand",
     "deploy": "npm publish --access public"
@@ -25,27 +17,25 @@
       "dist/"
     ]
   },
-  "bin": {
-    "get-favicon-tool": "dist/get-favicon-tool.js"
-  },
+  "main": "dist/index.js",
   "files": [
     "dist/**"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jlyonsmith/get-favicon-tool.git"
+    "url": "git+https://github.com/jlyonsmith/ico2pngs.git"
   },
   "keywords": [],
-  "author": "Some User",
+  "author": "John Lyon-Smith",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jlyonsmith/get-favicon-tool/issues"
+    "url": "https://github.com/jlyonsmith/ico2pngs/issues"
   },
-  "homepage": "https://github.com/jlyonsmith/get-favicon-tool#readme",
+  "homepage": "https://github.com/jlyonsmith/ico2pngs#readme",
   "dependencies": {
-    "chalk": "^4.0.0",
-    "minimist": "^1.2.5",
-    "x-ray": "^2.3.4"
+    "decode-bmp": "^0.2.1",
+    "fast-png": "^5.0.2",
+    "to-data-view": "^1.1.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
@@ -56,6 +46,6 @@
     "@babel/plugin-proposal-optional-chaining": "^7.9.0",
     "@babel/plugin-syntax-object-rest-spread": "^7.8.3",
     "@babel/preset-env": "^7.9.6",
-    "jest-cli": "^26.0.1"
+    "jest-cli": "^26.4.2"
   }
 }

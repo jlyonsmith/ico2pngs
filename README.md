@@ -1,3 +1,3 @@
-# Node.js Command Line Tool
+# ico2pngs
 
-This is a Node.js command line tool template.
+Extract the bitmaps from a `.ico` file and convert them to `.png` files. Returns an array of `{pngData, width, height, bitsPerPixel}` entries.
