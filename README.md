@@ -6,6 +6,7 @@ Extract the bitmaps from a `.ico` file and convert them to `.png` files.
 
 - Converts each image in the `.ico` file into `.png` data
 - Returns png data in a buffer, width, height & bits per pixel
+- Works in Node.js and in a browser
 
 ## Install 
 
