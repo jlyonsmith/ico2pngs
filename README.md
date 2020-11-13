@@ -19,7 +19,7 @@ npm install @johnls/ico2pngs
 In Node.js:
 
 ```js
-import { ico2pngs } from "../src"
+import { ico2pngs } from "ico2pngs"
 import fsPromise from "fs/promises"
 
 ;(async function () {
